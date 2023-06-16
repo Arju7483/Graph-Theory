@@ -1,34 +1,39 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int N = 1000;
-vector<int>graph[N] , ans ;
+const int N = 1e5+9 ;
+#define ll long long
+vector<int>graph[N] , ans;
 int indegree[N];
-int main(){
+
+int main()
+{
+    ios::sync_with_stdio(false);cin.tie(0);
     int n , m;
     cin >> n >> m;
-    while(m--){
+    for(int i=1;i<=m;i++){
         int u,v;
         cin >> u >> v;
         graph[u].push_back(v);
         indegree[v]++;
     }
-    vector<int>zeroIndegree;
-    for(int i=1;i<=n;i++){
-        if(indegree[i] == 0){
-            zeroIndegree.push_back(i);
-        }
+
+  queue<int>zeroIndegree;
+  for(int i=1;i<=n;i++){
+    if(indegree[i]==0)zeroIndegree.push(i);
+  }
+  while(!zeroIndegree.empty()){
+    int u = zeroIndegree.front();
+    zeroIndegree.pop();
+    ans.push_back(u);
+    for(auto v:graph[u]){
+        indegree[v]--;
+        if(indegree[v]==0)zeroIndegree.push(v);
     }
-    for(int i=0;i<zeroIndegree.size();i++){
-        ans.push_back(zeroIndegree[i]);
-        for(auto node:graph[zeroIndegree[i]]){
-            indegree[node]--;
-            if(indegree[node]==0)zeroIndegree.push_back(node);
-        }
-    }
-    if(ans.size()!=n){
-        cout<<"Can not be sort"<<endl;
-    }
-    else{
-        for(auto i:ans)cout<<i<<" ";
-    }
+  }
+  if(ans.size() != n){
+    cout<<"IMPOSSIBLE"<<endl;;return 0;
+  }
+  for(auto i:ans)cout<<i<<" ";
+  cout<<endl;
 }
+
