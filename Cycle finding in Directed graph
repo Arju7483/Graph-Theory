@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5+9;
+vector<int>graph[N];
+bool vis[N],activeNode[N] , is_cycle = false;  // activeNode holds the node which are in recursion stack
+void dfs(int u){
+    vis[u]=1;
+    activeNode[u]= true;
+    for(auto v:graph[u]){
+        if(!vis[v])dfs(v);
+        else{
+            if(activeNode[v]==true) is_cycle = true;
+        }
+    }
+    activeNode[u] = false;
+}
+
+int main(){
+    int n,m;
+    cin >> n >> m;
+    for(int i=1;i<=m;i++){
+        int u , v;
+        cin >> u >> v;
+        graph[u].push_back(v);
+    }
+    for(int i=1;i<=n;i++){
+        if(!vis[i])dfs(i);
+    }
+    cout<<is_cycle<<endl;
+}
