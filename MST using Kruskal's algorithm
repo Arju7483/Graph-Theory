@@ -1,0 +1,43 @@
+//Minimum Spanning Tree using Kruskal's algorithm
+#include<bits/stdc++.h>
+using namespace std;
+#define mx 100
+#define ll long long int
+pair<int,pair<int,int>>p[mx];
+ll cost=0;
+int n;
+int parent[mx];
+int Root(int x) {
+   if (parent[x] == x) return x;
+   return parent[x] = Root(parent[x]);
+}
+
+void UNION(int u,int v){
+    int rootu=Root(u);
+    int rootv=Root(v);
+    parent[rootv]=rootu;
+}
+void kruskal(){
+    pair<ll,pair<int,int>>p1;
+    for(auto i:p){
+        p1=i;
+        int u,v,w;
+        u=p1.second.first;
+        v=p1.second.second;
+        if(Root(u)!=Root(v)){
+                cost+=p1.first;
+            UNION(u,v);
+        }
+    }
+}
+int main(){
+    int n,e;cin>>n>>e;
+    for(int i=0;i<e;i++){
+        int w,u,v;cin>>u>>v>>w;
+        p[i]=make_pair(w,make_pair(u,v));
+    }
+    for(int i=1;i<=n;i++)parent[i]=i;
+    sort(p,p+e);
+    kruskal();
+    cout<<cost;
+}
