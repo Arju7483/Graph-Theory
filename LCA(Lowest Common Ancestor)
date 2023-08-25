@@ -1,0 +1,62 @@
+Your are given a tree and q queries.In each query you are given two nodes,you have to print the LCA of the two nodes.
+Resource:https://cp-algorithms.com/graph/lca.html
+Mysolution:
+
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5+9,inf=1e9;
+vector<int>graph[N],EulerTour;
+int height[N],first[N];
+bool vis[N];
+int tree[8*N];
+void build(int node,int b,int e){
+    if(b==e){
+        tree[node]=EulerTour[b];
+        return;
+    }
+    int left = 2*node,right=2*node+1;
+    int mid = (b+e)/2;
+    build(left,b,mid);
+    build(right,mid+1,e);
+    tree[node]=min(tree[left],tree[right]);
+}
+int query(int node,int b,int e,int l,int r){
+    if(b>r||e<l) return inf;
+    if(b>=l&&e<=r)return tree[node];
+    int left = 2*node,right=2*node+1;
+    int mid = (b+e)/2;
+    return min(query(left,b,mid,l,r),query(right,mid+1,e,l,r));
+
+}
+void dfs(int u,int h){
+    vis[u]=true;
+    height[u]=h;
+    EulerTour.push_back(u);
+    first[u]=EulerTour.size();
+    for(auto v:graph[u]){
+        if(!vis[v]){
+            dfs(v,h+1);
+            EulerTour.push_back(u);
+        }
+    }
+}
+
+int main(){
+    int n;cin >> n;
+    for(int i=1;i<n;i++){
+        int u,v;
+        cin >> u >> v;
+        graph[u].push_back(v);
+        graph[v].push_back(u);
+    }
+    dfs(1,0);
+    build(1,0,EulerTour.size()-1);
+    int numberOfQuery=1;
+    while(numberOfQuery--){
+        int n1,n2;
+        cin >> n1 >> n2;
+        int h=1e9,node;
+        int start=min(first[n1],first[n2]),last=max(first[n1],first[n2]);
+        cout<<query(1,0,EulerTour.size()-1,start-1,last-1)<<endl;
+    }
+}
