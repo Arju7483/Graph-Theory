@@ -1,0 +1,55 @@
+//Given a directed graph.Find the number of strongly connected components using Kosaraju's algorithm.
+//ref: https://cp-algorithms.com/graph/strongly-connected-components.html
+//complexity: O(V+E)
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e4 + 7;
+vector<int>graph[N],Tgraph[N]; ///transpose or reverse graph
+vector<int>Order;
+bool vis[N];
+void dfs1(int u){
+	vis[u] = 1;
+	for(auto v:graph[u]){
+		if(!vis[v])dfs1(v);
+	}
+
+	Order.push_back(u);
+}
+void dfs2(int u){
+	vis[u] = 1;
+	cout << u << " ";
+	for(auto v:Tgraph[u]){
+		if(!vis[v])dfs2(v);
+	}
+
+}
+int main(){
+     ios::sync_with_stdio(false);cin.tie(0);
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r",stdin); 
+freopen("output.txt","w",stdout); 
+#endif
+	int n, m, component = 0;
+	cin >> n >> m;
+	for(int i = 1; i <= m; i++){
+		int u,v;
+		cin >> u >> v;
+		graph[u].push_back(v);
+		Tgraph[v].push_back(u);
+	}
+	for(int i = 1; i <= n; i++){
+		if(!vis[i]) dfs1(i);
+	}
+	memset(vis,0,sizeof vis);
+	reverse(Order.begin(),Order.end());
+	for(auto u:Order){
+		if(!vis[u]){
+    component++;
+  cout << " Component "<<component <<" : ";
+			dfs2(u);
+			cout << '\n';
+			
+		}
+	}
+
+}
