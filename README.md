@@ -16,6 +16,8 @@
 
 <details markdown = "1"><summary>Solved Problem</summary>
  
-  [Problem-01 : ](https://cses.fi/problemset/task/1682) [My Solution](https://cses.fi/paste/ec36a56076940fd774801e/)
+  [Problem-01 : ](https://cses.fi/problemset/task/1682) &nbsp; [My Solution](https://cses.fi/paste/ec36a56076940fd774801e/)
+
+  [Problem-02 (Dijkstra) :](https://www.spoj.com/problems/INCARDS/) &nbsp; [ My Solution](https://www.spoj.com/status/INCARDS,pseudo_code20/)
 
 </details>
