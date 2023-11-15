@@ -8,7 +8,7 @@
 
   [Problem-02 (CSES 1688): ](https://cses.fi/problemset/task/1688/)[My Solution:](https://cses.fi/paste/1b8e13c825b7bbaf757a37/)
 
-  [Problem-03 (CSES 1687): ](https://cses.fi/problemset/task/1687)[My Solution:](https://cses.fi/paste/a6d5f7b2cc8a6f0d757763/)
+  [Problem-03 (CSES 1687-Binary Lifting): ](https://cses.fi/problemset/task/1687)[My Solution:](https://cses.fi/paste/a6d5f7b2cc8a6f0d757763/)
 
 </details>
 
