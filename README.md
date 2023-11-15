@@ -20,4 +20,10 @@
 
   [Problem-02 (Dijkstra) :](https://www.spoj.com/problems/INCARDS/) &nbsp; [ My Solution](https://www.spoj.com/status/INCARDS,pseudo_code20/)
 
+   [Problem-03 ( MST ) :](https://www.spoj.com/problems/BLINNET/en/) &nbsp; [ My Solution](https://www.spoj.com/status/BLINNET,pseudo_code20/)
+
+   [Problem-04 :](https://cses.fi/problemset/task/1194) &nbsp; [ My Solution](https://cses.fi/paste/2650dee56a05ab3b5fcbf8/)
+
+   [Problem-05 :](https://cses.fi/problemset/task/1682) &nbsp; [ My Solution](https://cses.fi/paste/ec36a56076940fd774801e/)
+
 </details>
