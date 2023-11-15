@@ -1,0 +1,57 @@
+//LCA using Binary Lifting
+//complexity O(nlongn)
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 2e5 + 9;
+vector<int>graph[N];
+int inTime[N],outTime[N];
+int up[N][30], lg, timer;
+void dfs(int u,int p){
+    up[u][0] = p; // actual parent
+    inTime[u] = ++timer;
+    for(auto v:graph[u]){
+        if(v != p) dfs(v,u);
+    }
+    outTime[u] = ++timer;
+}
+bool is_ancestor(int u, int v){
+    return inTime[u] <= inTime[v] and outTime[u] >= outTime[v];
+
+}
+int LCA(int u,int v){
+    if(is_ancestor(u,v)) return u;
+    if(is_ancestor(v,u)) return v;
+    for(int i = lg; i >= 0; i--){
+        if(!is_ancestor(up[u][i],v) and up[u][i] != 0){
+            u = up[u][i];
+        }
+    }
+    return up[u][0];
+}
+int main(){
+ios::sync_with_stdio(false);cin.tie(0);
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r",stdin); 
+freopen("output.txt","w",stdout); 
+#endif
+    
+    int n, q; cin >> n >> q;
+    for(int i = 1; i < n; i++){
+        int u, v; cin >> u >> v;
+        graph[u].push_back(v);
+        graph[v].push_back(u);
+    }
+    timer = 0;
+    dfs(1,0);
+     lg = log2(n)+1;
+    for(int i = 1; i <= lg; i++){  // Finding 1,2,4,8,16... level higer up parent for each node
+        for(int u = 1; u <= n; u++){
+            up[u][i] = up[up[u][i-1]][i-1];
+        }
+    }
+    while(q--){
+       int u,v;
+       cin >> u >> v;
+       cout << LCA(u,v) << '\n';
+    }
+}
