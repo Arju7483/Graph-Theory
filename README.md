@@ -27,3 +27,11 @@
    [Problem-05 :](https://cses.fi/problemset/task/1682) &nbsp; [ My Solution](https://cses.fi/paste/ec36a56076940fd774801e/)
 
 </details>
+
+
+>## Strongly Connected Component
+<details markdown = "1"><summary> Solved Problem </summary>
+ 
+[Problem-01:](https://cses.fi/problemset/task/1686) &nbsp; [ My Solution](https://cses.fi/paste/94d26d3dff78bb5874d391/)
+
+</details>
