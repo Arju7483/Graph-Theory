@@ -26,7 +26,7 @@
 
   [Problem-03 (CSES 1687-Binary Lifting): ](https://cses.fi/problemset/task/1687) &nbsp; [**Click here to see my solution**](https://cses.fi/paste/a6d5f7b2cc8a6f0d757763/)
 
-  [Problem-04 (CSES 1135) :] (https://cses.fi/problemset/task/1135/) &nbsp; [**Click here to see my solution**](https://cses.fi/paste/5d84136831785303778549/)
+  [Problem-04 (CSES 1135) :](https://cses.fi/problemset/task/1135/) &nbsp; [**Click here to see my solution**](https://cses.fi/paste/5d84136831785303778549/)
 
 </details>
 
