@@ -14,6 +14,8 @@
 
    [Problem-05 :](https://cses.fi/problemset/task/1682) &nbsp; [ My Solution](https://cses.fi/paste/ec36a56076940fd774801e/)
 
+   [Problem-06 (cses 1130) :](https://cses.fi/problemset/task/1130/) &nbsp; [ My Solution](https://cses.fi/paste/782115740cb6bcdb782fa7/)
+
 </details>
 
 >## LCA
