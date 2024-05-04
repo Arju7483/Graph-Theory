@@ -30,6 +30,9 @@
 
   [Problem-04 (CSES 1135) :](https://cses.fi/problemset/task/1135/) &nbsp; [**Click here to see my solution**](https://cses.fi/paste/5d84136831785303778549/)
 
+  [Problem-05 (BST) :](https://leetcode.com/problems/validate-binary-search-tree/description/?source=submission-ac) &nbsp; [**Click here to see my solution**](https://leetcode.com/problems/validate-binary-search-tree/submissions/1249235114/?source=submission-ac)
+  
+
 </details>
 
 >## Strongly Connected Component
