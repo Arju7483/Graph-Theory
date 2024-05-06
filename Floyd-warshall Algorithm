@@ -27,6 +27,7 @@ void FloydWarshall(){
         int u,v,w;
         cin >> u >> v >> w;
         Distance[u][v] = w;
+       // Distance[v][u] = w; //for undirected graph
     }
 
     for(int k = 1; k <= n; k++){
