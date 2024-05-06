@@ -1,7 +1,6 @@
 //Used to find all fair shortest path
 //Shortest path from each node to all other node
 //Used for both Directed and Undirected graph
-//Edge can be negative
 //Complexity : O(n^3)
 
 #include<bits/stdc++.h>
