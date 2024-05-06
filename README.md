@@ -41,3 +41,11 @@
 [Problem-01:](https://cses.fi/problemset/task/1686) &nbsp; [ My Solution](https://cses.fi/paste/94d26d3dff78bb5874d391/)
 
 </details>
+
+>## Floyd-warshall Algorithm
+<details markdown = "1"><summary> Solved Problem </summary>
+ 
+[Problem-01:](https://cses.fi/problemset/task/1672/) &nbsp; [ My Solution](https://cses.fi/paste/2c966358d7933b308c4277/)
+
+</details>
+
