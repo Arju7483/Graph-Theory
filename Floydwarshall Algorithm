@@ -1,0 +1,61 @@
+//Used to find all fair shortest path
+//Shortest path from each node to all other node
+//Used for both Directed and Undirected graph
+//Edge can be negative
+//Complexity : O(n^3)
+
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 105, inf = 1e9;
+int Distance[N][N], Next[N][N];
+void PrintPath(int source, int des){
+    cout << source << " ";
+    while(source != des){
+        source = Next[source][des];
+        cout << source << " ";
+    }
+}
+void FloydWarshall(){
+    int n, m; cin >> n >> m;
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n; j++){
+            if(i == j) Distance[i][j] = 0;
+            else Distance[i][j] = inf;
+            Next[i][j] = j;
+        }
+    }
+    for(int i = 1; i <= m; i++){
+        int u,v,w;
+        cin >> u >> v >> w;
+        Distance[u][v] = w;
+    }
+
+    for(int k = 1; k <= n; k++){
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n; j++){
+                if(Distance[i][k] == inf or Distance[k][j] == inf) continue; // to handle negative edge
+                if(Distance[i][j] > Distance[i][k] + Distance[k][j]){
+                    Distance[i][j] = Distance[i][k] + Distance[k][j];
+                    Next[i][j] = Next[i][k];
+                }
+            }
+        }
+    }
+
+   int source = 4, des = 1;
+   if(Distance[source][des] == inf) cout << "No path" << endl;
+   else PrintPath(source,des);
+    
+}
+int main()
+{
+    ios::sync_with_stdio(false);cin.tie(0);
+
+    #ifndef ONLINE_JUDGE
+freopen("input.txt","r",stdin); 
+freopen("output.txt","w",stdout); 
+#endif
+    
+        FloydWarshall();
+     
+}
