@@ -54,5 +54,7 @@
  
 [Problem-01:](https://cses.fi/problemset/task/1197/) &nbsp; [ My Solution](https://cses.fi/paste/677866fe216a4a668c9e4e/)
 
+[Problem-02:](https://cses.fi/problemset/task/1673/) &nbsp; [My Solution](https://cses.fi/paste/ce74b25a1f4bcaf38ca3a7/)
+
 </details>
 
