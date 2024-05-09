@@ -49,3 +49,10 @@
 
 </details>
 
+>## Bellman-Ford Algorithm
+<details markdown = "1"><summary> Solved Problem </summary>
+ 
+[Problem-01:](https://cses.fi/problemset/task/1197/) &nbsp; [ My Solution](https://cses.fi/paste/677866fe216a4a668c9e4e/)
+
+</details>
+
