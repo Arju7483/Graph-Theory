@@ -56,9 +56,11 @@ void Bellman_Ford(){
     }
   }
   if (x == -1) {
-    cout << "NO\n";
+    cout << "NO negative cycle.\n";
+    int des = n;
+    print_shortest_path(1,des);
   } else {
-    cout << "YES\n";
+    cout << "Negative cycle is: \n";
     print_negative_cycle(x);
   }
 }
