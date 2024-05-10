@@ -63,6 +63,12 @@
  
 [Problem-01:](https://www.spoj.com/problems/SUBMERGE/) &nbsp; [ My Solution](https://ideone.com/3bbT8E)
 
+</details>
+
+>## Bridge
+<details markdown = "1"><summary> Solved Problem </summary>
+ 
+[Problem-01:](https://www.spoj.com/problems/EC_P/) &nbsp; [ My Solution](https://ideone.com/G6Pk8o)
 
 </details>
 
