@@ -58,3 +58,11 @@
 
 </details>
 
+>## Articulation-Point
+<details markdown = "1"><summary> Solved Problem </summary>
+ 
+[Problem-01:](https://www.spoj.com/problems/SUBMERGE/) &nbsp; [ My Solution](https://ideone.com/3bbT8E)
+
+
+</details>
+
