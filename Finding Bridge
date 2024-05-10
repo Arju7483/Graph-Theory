@@ -1,0 +1,49 @@
+//complexity: O(V+E)
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5+7;
+vector<int>graph[N];
+int EntryTime[N],low[N];
+bool visited[N];
+int timer;
+void is_bridge(int u,int v){
+     cout << u << " " << v << endl;
+}
+void dfs(int u, int parent){
+    visited[u] = 1;
+    EntryTime[u] = low[u] = timer++;
+    for(auto v:graph[u]){
+        if(v == parent) continue;
+        if(!visited[v]){
+            dfs(v,u);
+            low[u] = min(low[u],low[v]);
+            if(low[v] > EntryTime[u]) is_bridge(u,v); // here is the main difference with articulation point
+        }
+        else{
+            low[u] = min(low[u],EntryTime[v]);
+        }
+        
+    }
+}
+void Find_Bridge(){
+    int n, m;
+    cin >> n >> m;
+    for(int i = 1; i <= m; i++){
+        int u,v; cin >> u >> v;
+        graph[u].push_back(v);
+        graph[v].push_back(u);
+    }
+    timer = 1;
+    dfs(1,-1);
+}
+
+int main() {
+  ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+      #ifndef ONLINE_JUDGE
+freopen("input.txt","r",stdin); 
+freopen("output.txt","w",stdout); 
+#endif
+  
+  Find_Bridge();
+  return 0;
+}
