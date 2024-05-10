@@ -1,0 +1,59 @@
+//complexity: O(V+E)
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5+7;
+vector<int>graph[N];
+int EntryTime[N],low[N];
+bool visited[N], ArtPoint[N];
+int timer;
+void dfs(int u, int parent){
+    visited[u] = 1;
+    EntryTime[u] = low[u] = timer++;
+    int child = 0;
+    for(auto v:graph[u]){
+        if(v == parent) continue;
+        if(!visited[v]){
+            child++;
+            dfs(v,u);
+            low[u] = min(low[u],low[v]);
+            if(low[v] >= EntryTime[u] and parent != -1)ArtPoint[u] = true; // if any of the child has low[v] >= EntryTime[u], then u is articulation point
+        }
+        else{
+            low[u] = min(low[u],EntryTime[v]);
+        }
+        
+        if(parent == -1 and child > 1)ArtPoint[u] = true; //special case for root
+    }
+}
+void ArticulationPoint(){
+    int n, m;
+    cin >> n >> m;
+    for(int i = 1; i <= m; i++){
+        int u,v; cin >> u >> v;
+        graph[u].push_back(v);
+        graph[v].push_back(u);
+    }
+    timer = 1;
+  dfs(1,-1);
+  int ans = 0;
+  for(int i = 1; i <= n; i++){
+    if(ArtPoint[i]==1)ans++;
+  }
+  cout << ans << endl;
+  for(int i = 1; i <= n; i++){
+    graph[i].clear();
+    visited[i] = 0;
+    ArtPoint[i] = 0;
+  } 
+    }
+
+int main() {
+  ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+      #ifndef ONLINE_JUDGE
+freopen("input.txt","r",stdin); 
+freopen("output.txt","w",stdout); 
+#endif
+  
+  ArticulationPoint();
+  return 0;
+}
