@@ -40,6 +40,8 @@
  
 [Problem-01:](https://cses.fi/problemset/task/1686) &nbsp; [ My Solution](https://cses.fi/paste/94d26d3dff78bb5874d391/)
 
+[Problem-02:](https://cses.fi/problemset/task/1682/) &nbsp; [My Solution](https://cses.fi/paste/ec36a56076940fd774801e/)
+
 </details>
 
 >## Floyd-warshall Algorithm
