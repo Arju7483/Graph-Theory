@@ -42,6 +42,8 @@
 
 [Problem-02:](https://cses.fi/problemset/task/1682/) &nbsp; [My Solution](https://cses.fi/paste/ec36a56076940fd774801e/)
 
+[Problem-03:](https://codeforces.com/problemset/problem/427/C) &nbsp; [My Solution](https://codeforces.com/contest/427/submission/260515557)
+
 </details>
 
 >## Floyd-warshall Algorithm
