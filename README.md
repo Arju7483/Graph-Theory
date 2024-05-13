@@ -16,6 +16,8 @@
 
    [Problem-06 (cses 1130) :](https://cses.fi/problemset/task/1130/) &nbsp; [ My Solution](https://cses.fi/paste/782115740cb6bcdb782fa7/)
 
+   [Problem-07 (Leetcode: Tree Diameter) :](https://leetcode.com/problems/minimum-height-trees/description/) &nbsp; [My Solution](https://leetcode.com/problems/minimum-height-trees/solutions/5150494/tree-diameter/)
+
 </details>
 
 >## LCA
