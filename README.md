@@ -18,6 +18,8 @@
 
    [Problem-07 (Leetcode: Tree Diameter) :](https://leetcode.com/problems/minimum-height-trees/description/) &nbsp; [My Solution](https://leetcode.com/problems/minimum-height-trees/solutions/5150494/tree-diameter/)
 
+   [Problem-08 (cycle in Directed graph):](https://atcoder.jp/contests/abc357/tasks/abc357_e) &nbsp; [My Solution](https://atcoder.jp/contests/abc357/submissions/54458327)
+
 </details>
 
 >## LCA
