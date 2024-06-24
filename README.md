@@ -78,5 +78,7 @@
  
 [Problem-01:](https://www.spoj.com/problems/EC_P/) &nbsp; [ My Solution](https://ideone.com/G6Pk8o)
 
+[Problem-02:](https://codeforces.com/problemset/problem/1986/F) &nbsp; [My Solution](https://codeforces.com/contest/1986/submission/267134701)
+
 </details>
 
