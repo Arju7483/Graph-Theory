@@ -80,5 +80,7 @@
 
 [Problem-02:](https://codeforces.com/problemset/problem/1986/F) &nbsp; [My Solution](https://codeforces.com/contest/1986/submission/267134701)
 
+[Problem-03:(dp+bridge)](https://codeforces.com/contest/1970/problem/G2) &nbsp; [My Solution](https://codeforces.com/contest/1970/submission/267300848)
+
 </details>
 
