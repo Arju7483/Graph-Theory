@@ -1,0 +1,93 @@
+/*You are given a rooted tree consisting of n nodes.Each node has a value.
+In each query:
+1.change the value of node s to x 
+2. calculate the sum of values in the subtree of node s
+*/
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+const int N = 2e5+7;
+vector<int>graph[N];
+int startTime[N],endTime[N],FlatTree[2*N], ar[2*N];
+ll tree[8*N];
+int timer;
+
+void build(int node,int b,int e){
+   if(b==e){
+      tree[node] = ar[b];
+      return;
+   }
+ int left = 2*node , right = 2*node+1;
+ int mid = (b+e)/2;
+ build(left,b,mid);
+ build(right,mid+1,e);
+ tree[node] = (tree[left] + tree[right]);
+}
+void update(int node,int b,int e,int l,int r,int value){
+   if(b>r||e<l)return;
+   if(b>=l&&e<=r){
+      tree[node] = value;
+      return;
+   }
+   int left = 2*node , right = 2*node+1;
+ int mid = (b+e)/2;
+ update(left,b,mid,l,r,value);
+ update(right,mid+1,e,l,r,value);
+ //tree[node] = merge(tree[left],tree[right]);
+ tree[node] = (tree[left] + tree[right]);
+}
+
+ll query(int node,int b,int e,int l,int r){
+   if(b>r||e<l){
+      return 0;
+   }
+   if(b>=l&&e<=r){
+      return tree[node];
+   }
+    int left = 2*node , right = 2*node+1;
+    int mid = (b+e)/2;
+    return query(left,b,mid,l,r)+query(right,mid+1,e,l,r);
+
+}
+void dfs(int u,int p){
+	startTime[u] = timer;
+	FlatTree[timer] = u;timer++;
+	for(auto v:graph[u]){
+		if(v == p) continue;
+		dfs(v,u);
+	}
+	endTime[u] = timer;
+	FlatTree[timer] = u; timer++;
+}
+void solve(){
+	int n,q; cin >> n >> q;
+	int value[n+1]; timer = 1;
+	for(int i = 1; i <= n; i++) cin >> value[i];
+	for(int i = 1; i < n; i++){
+		int u,v;
+		cin >> u >> v;
+		graph[u].push_back(v);
+		graph[v].push_back(u);
+	}
+	dfs(1,0);
+	for(int i = 1; i <= 2*n; i++) ar[i] = value[FlatTree[i]];
+	build(1,1,2*n);
+	while(q--){
+		int t; cin >> t;
+		if(t == 1){
+			int node,value; cin >> node >> value;
+			int l = startTime[node], r = endTime[node];
+			update(1,1,2*n,l,l,value);
+			update(1,1,2*n,r,r,value);
+		}
+		else{
+			int node; cin >> node;
+			int l = startTime[node], r = endTime[node];
+			cout << query(1,1,2*n,l,r)/2 << endl;
+		}
+	}
+
+}
+int main(){
+	solve();
+}
