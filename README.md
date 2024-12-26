@@ -84,3 +84,9 @@
 
 </details>
 
+>## Tree Query
+<details markdown = "1"><summary> Solved Problem </summary>
+ 
+[Problem-01:(CSES)](https://cses.fi/problemset/task/1137/) &nbsp; [ My Solution](https://cses.fi/paste/e96e40881e2c6306b05d47/)
+
+</details>
